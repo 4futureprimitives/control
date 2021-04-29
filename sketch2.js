@@ -5,7 +5,7 @@ var slider;
 
 //2. Load a sample
 function preload(){
-    sound = loadSound('au/Ceremony.mp3');
+    sound = loadSound('au/leviathan.mp3');
 }
 
 //3. Setup + website positioning
@@ -27,9 +27,11 @@ function setup() {
 
 //4. Animation
 function draw() {
+
+    background(255);
+    stroke(123, 134, 100);
     text('tap to play, tap to stop', 90, 90);    
-    background(145, 134, 165, 55);
-    strokeWeight(2)
+    strokeWeight(1)
     sound.setVolume(slider.value());
     sound.rate(sliderRate.value());
 
@@ -37,8 +39,9 @@ function draw() {
     let size = map(level, 0, 1, 0.1, 600);
     stroke(sliderRate.value(), 255, 105, 63);
     fill(sliderRate.value(), 55, 25, 127);
-    rect(100, 100, size, size);
-    
+    ellipse(width/2, height/2, size*1.5, size*1.5);
+    ellipse(width/2, height/2+100, size*1.5, size*1.5);
+    rect(width/2+ 150, 0, 100, size*100);
 }
 
 //5. Mouse function 
